@@ -26,16 +26,18 @@ function App() {
   return (
     <div className="App">
       <h1>Select an album:</h1>
+
       <select className="albums" onChange={(event) => createPic(event)}>
         {albums.map((album, index) => {
           return <option key={index} value={album.title}>{album.title}</option>
         })}
       </select>
-          <div>
-            {pics.map((pic, index) => {
-              return <img key={index} src={pic.thumbnailUrl} alt={`pic no. ${pic.id}`} />
-            })}
-          </div>
+      <hr />
+      <div>
+        {pics.map((pic, index) => {
+          return <img key={index} src={pic.thumbnailUrl} alt={`pic no. ${pic.id}`} />
+        })}
+      </div>
     </div>
   );
 }
